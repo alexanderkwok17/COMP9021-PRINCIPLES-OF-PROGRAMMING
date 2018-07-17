@@ -1,0 +1,42 @@
+\documentclass[10pt]{article}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\begin{tikzpicture}
+[grow'=left]
+\tikzstyle{every node}=[rectangle,draw]
+\node {a}
+    child {node {b}}
+    child {node {c}}
+    child {node {d}}
+    child {node {e}
+        child {node {f}}
+        child {node {g}}
+        child {node {h}}
+    }
+    child {node {i}
+        child {node {j}
+            child {node {k}
+                child {node {l}
+                    child {node {m}
+                        child {node {n}
+                            child {node {o}}
+                        }
+                    }
+                }
+            }
+        }
+        child {node {p}
+            child {node {q}
+                child[fill=none] {edge from parent[draw=none]}
+            }
+        }
+    };
+\end{tikzpicture}
+\end{center}
+
+\end{document}

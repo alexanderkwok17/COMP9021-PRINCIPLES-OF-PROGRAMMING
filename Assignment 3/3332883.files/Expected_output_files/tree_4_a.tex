@@ -1,0 +1,33 @@
+\documentclass[10pt]{article}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\begin{tikzpicture}
+\tikzstyle{every node}=[rectangle,draw]
+\node {A long root}
+    child {node {A}
+        child {node {H}}
+        child {node {I}
+            child {node {N}}
+        }
+        child {node {J}}
+    }
+    child {node {B}}
+    child {node {C}}
+    child {node {D}
+        child {node {K}}
+        child {node {L}}
+    }
+    child {node {E}}
+    child {node {F}
+        child {node {M}}
+    }
+    child {node {G}};
+\end{tikzpicture}
+\end{center}
+
+\end{document}

@@ -1,0 +1,26 @@
+\documentclass[10pt]{article}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\begin{tikzpicture}
+[grow'=down]
+\tikzstyle{every node}=[circle,draw]
+\node {The root}
+    child {node {Node number 1}}
+    child {node {Node number 2}
+        child {node {Node number 3}}
+        child {node {Node 4}
+            child[fill=none] {edge from parent[draw=none]}
+        }
+    }
+    child {
+        child {node {9021}}
+    };
+\end{tikzpicture}
+\end{center}
+
+\end{document}

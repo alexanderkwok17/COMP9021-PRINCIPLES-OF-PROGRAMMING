@@ -1,0 +1,39 @@
+\documentclass[10pt]{article}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\begin{tikzpicture}
+[grow'=up]
+\tikzstyle{every node}=[ellipse,draw]
+\node {aa bbb ccc dd}
+    child
+    child {
+        child {node {ee ffff gg}
+            child[fill=none] {edge from parent[draw=none]}
+        }
+        child {
+            child {node {hhh ii}
+                child[fill=none] {edge from parent[draw=none]}
+            }
+        }
+    }
+    child {node {jj kk lll}
+        child {node {m}
+            child {node {n}
+                child {node {o}
+                    child {node {p}
+                        child {node {q}}
+                    }
+                }
+            }
+        }
+        child {node {rrrr ss}}
+    };
+\end{tikzpicture}
+\end{center}
+
+\end{document}

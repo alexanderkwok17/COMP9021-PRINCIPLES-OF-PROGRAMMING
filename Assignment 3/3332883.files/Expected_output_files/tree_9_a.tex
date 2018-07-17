@@ -1,0 +1,26 @@
+\documentclass[10pt]{article}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\begin{tikzpicture}
+[grow'=left]
+\tikzstyle{every node}=[rectangle,draw]
+\node {a very long root}
+    child {node {a big distance from the root}}
+    child {node {shorter}
+        child[fill=none] {edge from parent[draw=none]}
+    }
+    child {
+        child {
+            child[fill=none] {edge from parent[draw=none]}
+        }
+    }
+    child[fill=none] {edge from parent[draw=none]};
+\end{tikzpicture}
+\end{center}
+
+\end{document}

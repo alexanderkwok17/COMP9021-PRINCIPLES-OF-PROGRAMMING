@@ -1,0 +1,23 @@
+
+
+
+
+
+
+        The root
+              Node number     1
+  
+              Node number     2
+      
+ 
+                    Node number        3
+
+ 
+                    Node 4
+                          
+              
+
+
+  
+                    9021
+                  

@@ -1,0 +1,735 @@
+TEST 1 BEGIN
+$ python3 display_tree.py tree_20.txt
+No file named tree_20.txt in current directory
+
+TEST 1 END
+
+TEST 2 BEGIN
+$ python3 display_tree.py -nodestyle tree_1.txt tree_2.txt
+Incorrect invocation
+
+TEST 2 END
+
+TEST 3 BEGIN
+$ python3 display_tree.py tree_1.txt -nodestyle rectangle tree_2.txt
+Incorrect invocation
+
+TEST 3 END
+
+TEST 4 BEGIN
+$ python3 display_tree.py -grow circle tree_1.txt
+Incorrect invocation
+
+TEST 4 END
+
+TEST 5 BEGIN
+$ python3 display_tree.py tree_11.txt
+Wrong number of leading spaces on nonblank line 6
+
+TEST 5 END
+
+TEST 6 BEGIN
+$ python3 display_tree.py tree_12.txt
+Wrong number of leading spaces on nonblank line 7
+
+TEST 6 END
+
+TEST 7 BEGIN
+$ python3 display_tree.py tree_13.txt
+Wrong number of leading spaces on nonblank line 12
+
+TEST 7 END
+
+TEST 8 BEGIN
+$ python3 display_tree.py tree_14.txt
+Wrong number of leading spaces on nonblank line 4
+
+TEST 8 END
+
+TEST 9 BEGIN
+$ python3 display_tree.py -grow up tree_15.txt
+Wrong number of leading spaces on nonblank line 2
+
+TEST 9 END
+
+TEST 10 BEGIN
+$ python3 display_tree.py -nodestyle rectangle tree_16.txt
+Wrong number of leading spaces on nonblank line 8
+
+TEST 10 END
+
+TEST 11 BEGIN
+$ python3 display_tree.py -nodestyle ellipse -grow right tree_17.txt
+Wrong number of leading spaces on nonblank line 2
+
+TEST 11 END
+
+TEST 12 BEGIN
+$ python3 display_tree.py -grow down -nodestyle circle tree_18.txt
+Wrong number of leading spaces on nonblank line 26
+
+TEST 12 END
+
+TEST 13 BEGIN
+$ python3 display_tree.py tree_1.txt
+
+TEST 13 END
+
+TEST 14 BEGIN
+$ python3 display_tree.py -grow left tree_1_a.txt
+
+TEST 14 END
+
+TEST 15 BEGIN
+$ python3 display_tree.py tree_2.txt
+
+TEST 15 END
+
+TEST 16 BEGIN
+$ python3 display_tree.py -grow up tree_2_a.txt
+
+TEST 16 END
+
+TEST 17 BEGIN
+$ python3 display_tree.py tree_3.txt
+
+TEST 17 END
+
+TEST 18 BEGIN
+$ python3 display_tree.py -nodestyle ellipse tree_3_a.txt
+
+TEST 18 END
+
+TEST 19 BEGIN
+$ python3 display_tree.py tree_4.txt
+
+TEST 19 END
+
+TEST 20 BEGIN
+$ python3 display_tree.py -nodestyle rectangle tree_4_a.txt
+
+TEST 20 END
+
+TEST 21 BEGIN
+$ python3 display_tree.py tree_5.txt
+
+TEST 21 END
+
+TEST 22 BEGIN
+$ python3 display_tree.py -nodestyle circle -grow down tree_5_a.txt
+
+TEST 22 END
+
+TEST 23 BEGIN
+$ python3 display_tree.py tree_6.txt
+
+TEST 23 END
+
+TEST 24 BEGIN
+$ python3 display_tree.py -nodestyle ellipse -grow up tree_6_a.txt
+
+TEST 24 END
+
+TEST 25 BEGIN
+$ python3 display_tree.py tree_7.txt
+
+TEST 25 END
+
+TEST 26 BEGIN
+$ python3 display_tree.py  -grow up -nodestyle ellipse tree_7_a.txt
+
+TEST 26 END
+
+TEST 27 BEGIN
+$ python3 display_tree.py tree_8.txt
+
+TEST 27 END
+
+TEST 28 BEGIN
+$ python3 display_tree.py  -grow left -nodestyle rectangle tree_8_a.txt
+
+TEST 28 END
+
+TEST 29 BEGIN
+$ python3 display_tree.py tree_9.txt
+
+TEST 29 END
+
+TEST 30 BEGIN
+$ python3 display_tree.py  -nodestyle rectangle -grow left tree_9_a.txt
+
+TEST 30 END
+
+TEST 31 BEGIN
+$ python3 display_tree.py tree_10.txt
+
+TEST 31 END
+
+TEST 32 BEGIN
+$ python3 display_tree.py  -grow right -nodestyle circle tree_10_a.txt
+
+TEST 32 END
+
+TEST 33 BEGIN
+$ python3 roman_arabic.py
+I expect one, two or three command line arguments,
+  the second one being "minimally" in case two of those are provided
+  and "using" in case three of those are provided.
+
+TEST 33 END
+
+TEST 34 BEGIN
+$ python3 roman_arabic.py 4567 2345
+I expect one, two or three command line arguments,
+  the second one being "minimally" in case two of those are provided
+  and "using" in case three of those are provided.
+
+TEST 34 END
+
+TEST 35 BEGIN
+$ python3 roman_arabic.py 123 using
+I expect one, two or three command line arguments,
+  the second one being "minimally" in case two of those are provided
+  and "using" in case three of those are provided.
+
+TEST 35 END
+
+TEST 36 BEGIN
+$ python3 roman_arabic.py 519 minimally using
+I expect one, two or three command line arguments,
+  the second one being "minimally" in case two of those are provided
+  and "using" in case three of those are provided.
+
+TEST 36 END
+
+TEST 37 BEGIN
+$ python3 roman_arabic.py 519 using ABCDE minimally
+I expect one, two or three command line arguments,
+  the second one being "minimally" in case two of those are provided
+  and "using" in case three of those are provided.
+
+TEST 37 END
+
+TEST 38 BEGIN
+$ python3 roman_arabic.py 1045 minimal
+I expect one, two or three command line arguments,
+  the second one being "minimally" in case two of those are provided
+  and "using" in case three of those are provided.
+
+TEST 38 END
+
+TEST 39 BEGIN
+$ python3 roman_arabic.py 30 THCO THCO
+I expect one, two or three command line arguments,
+  the second one being "minimally" in case two of those are provided
+  and "using" in case three of those are provided.
+
+TEST 39 END
+
+TEST 40 BEGIN
+$ python3 roman_arabic.py 51 using 0ABCDE
+The provided sequence of so-called generalised roman symbols is invalid,
+  either because it does not consist of letters only
+  or because some letters are repeated.
+
+TEST 40 END
+
+TEST 41 BEGIN
+$ python3 roman_arabic.py 51 using DABCDE
+The provided sequence of so-called generalised roman symbols is invalid,
+  either because it does not consist of letters only
+  or because some letters are repeated.
+
+TEST 41 END
+
+TEST 42 BEGIN
+$ python3 roman_arabic.py 1 using _E
+The provided sequence of so-called generalised roman symbols is invalid,
+  either because it does not consist of letters only
+  or because some letters are repeated.
+
+TEST 42 END
+
+TEST 43 BEGIN
+$ python3 roman_arabic.py 0
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 43 END
+
+TEST 44 BEGIN
+$ python3 roman_arabic.py 010
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 44 END
+
+TEST 45 BEGIN
+$ python3 roman_arabic.py 4000
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 45 END
+
+TEST 46 BEGIN
+$ python3 roman_arabic.py VV
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 46 END
+
+TEST 47 BEGIN
+$ python3 roman_arabic.py IVI
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 47 END
+
+TEST 48 BEGIN
+$ python3 roman_arabic.py IVX
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 48 END
+
+TEST 49 BEGIN
+$ python3 roman_arabic.py 1
+I
+
+TEST 49 END
+
+TEST 50 BEGIN
+$ python3 roman_arabic.py 69
+LXIX
+
+TEST 50 END
+
+TEST 51 BEGIN
+$ python3 roman_arabic.py 307
+CCCVII
+
+TEST 51 END
+
+TEST 52 BEGIN
+$ python3 roman_arabic.py 1110
+MCX
+
+TEST 52 END
+
+TEST 53 BEGIN
+$ python3 roman_arabic.py 2009
+MMIX
+
+TEST 53 END
+
+TEST 54 BEGIN
+$ python3 roman_arabic.py 3060
+MMMLX
+
+TEST 54 END
+
+TEST 55 BEGIN
+$ python3 roman_arabic.py 3984
+MMMCMLXXXIV
+
+TEST 55 END
+
+TEST 56 BEGIN
+$ python3 roman_arabic.py I
+1
+
+TEST 56 END
+
+TEST 57 BEGIN
+$ python3 roman_arabic.py LXIX
+69
+
+TEST 57 END
+
+TEST 58 BEGIN
+$ python3 roman_arabic.py CCCVII
+307
+
+TEST 58 END
+
+TEST 59 BEGIN
+$ python3 roman_arabic.py MCX
+1110
+
+TEST 59 END
+
+TEST 60 BEGIN
+$ python3 roman_arabic.py MMIX
+2009
+
+TEST 60 END
+
+TEST 61 BEGIN
+$ python3 roman_arabic.py MMMLX
+3060
+
+TEST 61 END
+
+TEST 62 BEGIN
+$ python3 roman_arabic.py MMMCMLXXXIV
+3984
+
+TEST 62 END
+
+TEST 63 BEGIN
+$ python3 roman_arabic.py aba using ab
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 63 END
+
+TEST 64 BEGIN
+$ python3 roman_arabic.py LI using IPQL
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 64 END
+
+TEST 65 BEGIN
+$ python3 roman_arabic.py ABCDEF using XYZBCDEF
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 65 END
+
+TEST 66 BEGIN
+$ python3 roman_arabic.py ABCDEFGHIJKLMNOPQRST using AbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStT
+11111111111111111111
+
+TEST 66 END
+
+TEST 67 BEGIN
+$ python3 roman_arabic.py 098 using zaqws
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 67 END
+
+TEST 68 BEGIN
+$ python3 roman_arabic.py 4000 using lkjhgfd
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 68 END
+
+TEST 69 BEGIN
+$ python3 roman_arabic.py 4 using lL
+Ll
+
+TEST 69 END
+
+TEST 70 BEGIN
+$ python3 roman_arabic.py 7 using asdfghjklpoiuyt
+ytt
+
+TEST 70 END
+
+TEST 71 BEGIN
+$ python3 roman_arabic.py 957 using mMnNjJkKtTgGdDqQ
+GTdqQQ
+
+TEST 71 END
+
+TEST 72 BEGIN
+$ python3 roman_arabic.py 55555 using plmnbqwert
+pmbwr
+
+TEST 72 END
+
+TEST 73 BEGIN
+$ python3 roman_arabic.py 936936936936936 using pqowieurytLAKSDJFHGzmxncbvQPWOEIRUTY
+retttLASAJJJFHzHxxxncvcPPPWOIOUUUTY
+
+TEST 73 END
+
+TEST 74 BEGIN
+$ python3 roman_arabic.py 1020304050607080901 using qwertyuioplkjhgfdsaZXCVBNMLKJHGFDSAQWERTYUIOPzxcvbnm
+fZZBBBKLGAQRTTIOOOczm
+
+TEST 74 END
+
+TEST 75 BEGIN
+$ python3 roman_arabic.py 6000000040000000008 using QWERTYUIOPlkjhgfdsaZXCVBNMmnbvcxzASDFGHJKL
+TYCXKLLL
+
+TEST 75 END
+
+TEST 76 BEGIN
+$ python3 roman_arabic.py Ll using lL
+4
+
+TEST 76 END
+
+TEST 77 BEGIN
+$ python3 roman_arabic.py ytt using asdfghjklpoiuyt
+7
+
+TEST 77 END
+
+TEST 78 BEGIN
+$ python3 roman_arabic.py GTdqQQ using mMnNjJkKtTgGdDqQ
+957
+
+TEST 78 END
+
+TEST 79 BEGIN
+$ python3 roman_arabic.py pmbwr using plmnbqwert
+55555
+
+TEST 79 END
+
+TEST 80 BEGIN
+$ python3 roman_arabic.py retttLASAJJJFHzHxxxncvcPPPWOIOUUUTY using pqowieurytLAKSDJFHGzmxncbvQPWOEIRUTY
+936936936936936
+
+TEST 80 END
+
+TEST 81 BEGIN
+$ python3 roman_arabic.py fZZBBBKLGAQRTTIOOOczm using qwertyuioplkjhgfdsaZXCVBNMLKJHGFDSAQWERTYUIOPzxcvbnm
+1020304050607080901
+
+TEST 81 END
+
+TEST 82 BEGIN
+$ python3 roman_arabic.py TYCXKLLL using QWERTYUIOPlkjhgfdsaZXCVBNMmnbvcxzASDFGHJKL
+6000000040000000008
+
+TEST 82 END
+
+TEST 83 BEGIN
+$ python3 roman_arabic.py 937 minimally
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 83 END
+
+TEST 84 BEGIN
+$ python3 roman_arabic.py I0 minimally
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 84 END
+
+TEST 85 BEGIN
+$ python3 roman_arabic.py MSSM minimally
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 85 END
+
+TEST 86 BEGIN
+$ python3 roman_arabic.py ABAB minimally
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 86 END
+
+TEST 87 BEGIN
+$ python3 roman_arabic.py ABCDEFA minimally
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 87 END
+
+TEST 88 BEGIN
+$ python3 roman_arabic.py ABAAA minimally
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 88 END
+
+TEST 89 BEGIN
+$ python3 roman_arabic.py ABBACDEFGH minimally
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 89 END
+
+TEST 90 BEGIN
+$ python3 roman_arabic.py abcdeabcde minimally
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 90 END
+
+TEST 91 BEGIN
+$ python3 roman_arabic.py aaaYeXbbbcccdddeee minimally
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 91 END
+
+TEST 92 BEGIN
+$ python3 roman_arabic.py abcdefghijabcdefghij minimally
+The input is not a valid arabic number,
+  or is too large an arabic number,
+  or is not a valid (possibly generalised) roman number,
+  depending on what is expected.
+
+TEST 92 END
+
+TEST 93 BEGIN
+$ python3 roman_arabic.py X minimally
+1 using X
+
+TEST 93 END
+
+TEST 94 BEGIN
+$ python3 roman_arabic.py qp minimally
+4 using pq
+
+TEST 94 END
+
+TEST 95 BEGIN
+$ python3 roman_arabic.py LPPP minimally
+8 using LP
+
+TEST 95 END
+
+TEST 96 BEGIN
+$ python3 roman_arabic.py hjgrt minimally
+144 using hgjtr
+
+TEST 96 END
+
+TEST 97 BEGIN
+$ python3 roman_arabic.py TTTEEQ minimally
+321 using T_E_Q
+
+TEST 97 END
+
+TEST 98 BEGIN
+$ python3 roman_arabic.py ERRTYYY minimally
+78 using ERTY
+
+TEST 98 END
+
+TEST 99 BEGIN
+$ python3 roman_arabic.py IIUUUtTRRB minimally
+23171 using I_U_tTR_B
+
+TEST 99 END
+
+TEST 100 BEGIN
+$ python3 roman_arabic.py lljjggffsswwccbbnn minimally
+222222222 using l_j_g_f_s_w_c_b_n
+
+TEST 100 END
+
+TEST 101 BEGIN
+$ python3 roman_arabic.py eteuuiooolllkjjghfds minimally
+192837144 using e_t_uio_lkj_gfhsd
+
+TEST 101 END
+
+TEST 102 BEGIN
+$ python3 roman_arabic.py lllkkkjjhhmxxvvqqqppp minimally
+33227233 using l_k_j_hmx_v_q_p
+
+TEST 102 END
+
+TEST 103 BEGIN
+$ python3 roman_arabic.py kdjshffyyyMAAADDGDT minimally
+44738291 using dksjhf_yMA_D_G_T
+
+TEST 103 END
+
+TEST 104 BEGIN
+$ python3 roman_arabic.py brbwwqaaaZZZXCCKBOPL minimally
+192837144 using b_r_wqa_ZXC_KOBLP
+
+TEST 104 END
+
+TEST 105 BEGIN
+$ python3 roman_arabic.py CEEGGGIikmMoOOqQQQSR minimally
+73144784 using CE_G_IkiMmoOqQRS
+
+TEST 105 END
+
+TEST 106 BEGIN
+$ python3 roman_arabic.py uvcfdrzzzeeaQQCCCHVYRE minimally
+1448273144 using ucvdfrz_eaQ_C_HYVER
+
+TEST 106 END
+
+TEST 107 BEGIN
+$ python3 roman_arabic.py iyoppplkkjhgdazxccvbbbmb minimally
+487444789 using yioplkhjdgzaxcvb_m
+
+TEST 107 END
+
+TEST 108 BEGIN
+$ python3 roman_arabic.py KKKJJJHHZZXCVVRRQQQWWW minimally
+332217233 using K_J_H_Z_XCV_R_Q_W
+
+TEST 108 END
+
+TEST 109 BEGIN
+$ python3 roman_arabic.py tgggvnnLAAAKSSFJHDERRTWWW minimally
+87874478 using tgvnLAKSJFDHERTW
+
+TEST 109 END
+
+TEST 110 BEGIN
+$ python3 roman_arabic.py YUUIIIOoplLkKKjJJJHJGHfFFFdDDsSaZzXXXCCV minimally
+7314478998744821 using YU_I_OpoLlkKjJ_H_GfFdDSsZazX_C_V
+
+TEST 110 END
+
+TEST 111 BEGIN
+$ python3 roman_arabic.py IOOPPPLlkjJhHHgGGGFGDFsSSSaAAzZxCcVVVBBN minimally
+7314478998744821 using IO_P_LklJjhHgG_F_DsSaAZzCxcV_B_N
+
+TEST 111 END
+
+TEST 112 BEGIN
+$ python3 roman_arabic.py fhdssszsxcccbcnmmmNmBVVVXVZAAASDGGHJLLPOUUYTEEWQ minimally
+4898989898171717174 using hfds_zxc_bnm_NBV_XZA_SDG_HJL_POU_YTEQW
+
+TEST 112 END
+
