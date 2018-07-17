@@ -1,0 +1,878 @@
+TEST 1 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('bad_grammar_1.txt')" 
+Incorrect grammar
+
+TEST 1 END
+
+TEST 2 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('bad_grammar_2.txt')" 
+Incorrect grammar
+
+TEST 2 END
+
+TEST 3 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('bad_grammar_3.txt')" 
+Incorrect grammar
+
+TEST 3 END
+
+TEST 4 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('bad_grammar_4.txt')" 
+Incorrect grammar
+
+TEST 4 END
+
+TEST 5 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('bad_grammar_5.txt')" 
+Incorrect grammar
+
+TEST 5 END
+
+TEST 6 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_1.txt'); axiom_array , row_tables , column_tables = grammar; print_pattern(axiom_array)" 
+a S a
+B Y B
+
+TEST 6 END
+
+TEST 7 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_1.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(row_tables)" 
+A -> a
+B -> b
+
+B -> B b
+U -> U X
+V -> U c
+Z -> Y X
+
+TEST 7 END
+
+TEST 8 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_1.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(column_tables)" 
+S -> a S a
+X -> b X b
+Y -> B Z B
+
+S -> a
+W -> d
+X -> a
+Y -> A
+
+TEST 8 END
+
+TEST 9 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_1.txt'); non_terminals, terminals = symbols(grammar); print(non_terminals)" 
+['A', 'B', 'S', 'U', 'V', 'W', 'X', 'Y', 'Z']
+
+TEST 9 END
+
+TEST 10 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_1.txt'); non_terminals, terminals = symbols(grammar); print(terminals)" 
+['a', 'b', 'c', 'd']
+
+TEST 10 END
+
+TEST 11 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_2.txt'); axiom_array , row_tables , column_tables = grammar; print_pattern(axiom_array)" 
+* * * * * * * * * * * *
+A B C D E F G H I J K L
+
+TEST 11 END
+
+TEST 12 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_2.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(row_tables)" 
+A -> a a B
+B -> b b C
+C -> c c D
+D -> d d E
+E -> e e F
+F -> f f G
+G -> g g H
+H -> h h I
+I -> i i J
+J -> j j K
+K -> k k L
+L -> l l A
+
+A -> a a *
+B -> b b *
+C -> c c *
+D -> d d *
+E -> e e *
+F -> f f *
+G -> g g *
+H -> h h *
+I -> i i *
+J -> j j *
+K -> k k *
+L -> l l *
+
+TEST 12 END
+
+TEST 13 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_2.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(column_tables)" 
+
+TEST 13 END
+
+TEST 14 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_2.txt'); non_terminals, terminals = symbols(grammar); print(non_terminals)" 
+['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
+
+TEST 14 END
+
+TEST 15 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_2.txt'); non_terminals, terminals = symbols(grammar); print(terminals)" 
+['*', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l']
+
+TEST 15 END
+
+TEST 16 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_3.txt'); axiom_array , row_tables , column_tables = grammar; print_pattern(axiom_array)" 
+a AAA
+AAA BBB
+
+TEST 16 END
+
+TEST 17 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_3.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(row_tables)" 
+AAA -> a
+BBB -> D
+EEE -> g
+
+AAA -> a   a   a   AAA
+BBB -> AAA AAA AAA CCC
+DDD -> k   j   i   h
+EEE -> h   i   j   k
+
+TEST 17 END
+
+TEST 18 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_3.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(column_tables)" 
+AAA -> a
+D   -> a
+
+AAA -> a   a   AAA
+CCC -> AAA AAA BBB
+DDD -> EEE DDD f
+
+TEST 18 END
+
+TEST 19 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_3.txt'); non_terminals, terminals = symbols(grammar); print(non_terminals)" 
+['AAA', 'BBB', 'CCC', 'D', 'DDD', 'EEE']
+
+TEST 19 END
+
+TEST 20 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_3.txt'); non_terminals, terminals = symbols(grammar); print(terminals)" 
+['a', 'f', 'g', 'h', 'i', 'j', 'k']
+
+TEST 20 END
+
+TEST 21 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_4.txt'); axiom_array , row_tables , column_tables = grammar; print_pattern(axiom_array)" 
+A1 B1 C1
+B1 C1 A1
+C1 A1 B1
+
+TEST 21 END
+
+TEST 22 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_4.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(row_tables)" 
+A1 -> A2 A2
+B1 -> B2 B2
+C1 -> C2 C2
+X1 -> Y1 Z1
+
+A2 -> A3 A3
+B2 -> B3 B3
+C2 -> C3 C3
+Y1 -> Y2 Z2
+Z1 -> Z2 Y2
+
+A -> a
+B -> b
+C -> c
+
+TEST 22 END
+
+TEST 23 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_4.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(column_tables)" 
+A2 -> A2 A2
+B2 -> B2 B2
+C2 -> C2 C2
+Y2 -> C2 Y2
+Z2 -> A2 B2
+
+A3 -> A A
+B3 -> B B
+C3 -> C C
+H3 -> a e
+
+TEST 23 END
+
+TEST 24 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_4.txt'); non_terminals, terminals = symbols(grammar); print(non_terminals)" 
+['A', 'A1', 'A2', 'A3', 'B', 'B1', 'B2', 'B3', 'C', 'C1', 'C2', 'C3', 'H3', 'X1', 'Y1', 'Y2', 'Z1', 'Z2']
+
+TEST 24 END
+
+TEST 25 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_4.txt'); non_terminals, terminals = symbols(grammar); print(terminals)" 
+['a', 'b', 'c', 'e']
+
+TEST 25 END
+
+TEST 26 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_5.txt'); axiom_array , row_tables , column_tables = grammar; print_pattern(axiom_array)" 
+Start
+
+TEST 26 END
+
+TEST 27 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_5.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(row_tables)" 
+A       -> +       O
+Left_2  -> O       Left_1
+O       -> o       O
+Right_2 -> O       Right_1
+Useless -> Useless q
+
+Left_1  -> Left_3
+O       -> +
+Right_1 -> Right_3
+Useless -> x
+
+TEST 27 END
+
+TEST 28 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_5.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(column_tables)" 
+Start   -> Left_2 A       Right_2
+Useless -> y      Useless p
+
+Left_1 -> Left_2 A
+O      -> O      o
+
+O       -> o O
+Right_1 -> A Right_2
+
+Left_3  -> +
+O       -> o
+Useless -> Useless
+
+O       -> o
+Right_3 -> +
+
+TEST 28 END
+
+TEST 29 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_5.txt'); non_terminals, terminals = symbols(grammar); print(non_terminals)" 
+['A', 'Left_1', 'Left_2', 'Left_3', 'O', 'Right_1', 'Right_2', 'Right_3', 'Start', 'Useless']
+
+TEST 29 END
+
+TEST 30 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_5.txt'); non_terminals, terminals = symbols(grammar); print(terminals)" 
+['+', 'o', 'p', 'q', 'x', 'y']
+
+TEST 30 END
+
+TEST 31 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_6.txt'); axiom_array , row_tables , column_tables = grammar; print_pattern(axiom_array)" 
+A1
+A
+A
+A
+A
+A
+A
+A2
+
+TEST 31 END
+
+TEST 32 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_6.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(row_tables)" 
+A  -> Z
+A2 -> +
+D2 -> +
+
+MNP -> b   MNP
+PQR -> MNP c
+
+A -> A
+B -> C
+X -> *
+
+TEST 32 END
+
+TEST 33 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_6.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(column_tables)" 
+MNP -> MNP a
+
+C  -> +
+B1 -> +
+B2 -> D2
+
+A -> +
+Z -> +
+
+X  -> B
+A1 -> B1
+A2 -> B2
+
+A  -> A X
+A1 -> A A1
+A2 -> A A2
+
+X  -> X  X
+A1 -> +  A1
+A2 -> A2 A2
+
+TEST 33 END
+
+TEST 34 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_6.txt'); non_terminals, terminals = symbols(grammar); print(non_terminals)" 
+['A', 'A1', 'A2', 'B', 'B1', 'B2', 'C', 'D2', 'MNP', 'PQR', 'X', 'Z']
+
+TEST 34 END
+
+TEST 35 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_6.txt'); non_terminals, terminals = symbols(grammar); print(terminals)" 
+['*', '+', 'a', 'b', 'c']
+
+TEST 35 END
+
+TEST 36 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_7.txt'); axiom_array , row_tables , column_tables = grammar; print_pattern(axiom_array)" 
+A I X M
+B J Y N
+C K Z M
+
+TEST 36 END
+
+TEST 37 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_7.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(row_tables)" 
+
+TEST 37 END
+
+TEST 38 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_7.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(column_tables)" 
+A -> A1
+B -> B1
+C -> A1
+
+A1 ->
+B1 ->
+C1 ->
+
+A2 ->
+B2 ->
+C2 ->
+
+I -> W
+J -> W
+K -> Z
+L -> Z
+
+M -> A2 Y
+N -> B2 Z
+
+W -> a b
+X -> a b
+Y -> a b
+Z -> a b
+
+W -> A1
+X -> A1
+Y -> B1
+Z -> B1
+
+TEST 38 END
+
+TEST 39 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_7.txt'); non_terminals, terminals = symbols(grammar); print(non_terminals)" 
+['A', 'A1', 'A2', 'B', 'B1', 'B2', 'C', 'C1', 'C2', 'I', 'J', 'K', 'L', 'M', 'N', 'W', 'X', 'Y', 'Z']
+
+TEST 39 END
+
+TEST 40 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_7.txt'); non_terminals, terminals = symbols(grammar); print(terminals)" 
+['a', 'b', 'ε']
+
+TEST 40 END
+
+TEST 41 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_8.txt'); axiom_array , row_tables , column_tables = grammar; print_pattern(axiom_array)" 
+A1 B1 C1 D1 E1
+A2 B2 C2 D2 E2
+A3 B3 C3 D3 E3
+
+TEST 41 END
+
+TEST 42 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_8.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(row_tables)" 
+
+TEST 42 END
+
+TEST 43 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_8.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(column_tables)" 
+C1 -> D1
+C2 -> D2
+C3 -> D3
+
+C1 -> X1
+C2 -> X2
+C3 -> X3
+
+B1 ->
+B2 ->
+B3 ->
+
+A1 -> D1
+A2 -> D2
+
+A1 -> a
+A2 -> b
+A3 -> a
+
+A1 -> D1
+A2 -> D2
+A3 -> D3
+
+X1 -> B1
+X2 -> B2
+X3 -> B3
+
+E1 ->
+E2 ->
+E3 ->
+
+E2 ->
+E3 ->
+
+D1 -> B1 E1
+D2 -> B2 E2
+D3 -> B3 E3
+
+TEST 43 END
+
+TEST 44 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_8.txt'); non_terminals, terminals = symbols(grammar); print(non_terminals)" 
+['A1', 'A2', 'A3', 'B1', 'B2', 'B3', 'C1', 'C2', 'C3', 'D1', 'D2', 'D3', 'E1', 'E2', 'E3', 'X1', 'X2', 'X3']
+
+TEST 44 END
+
+TEST 45 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_8.txt'); non_terminals, terminals = symbols(grammar); print(terminals)" 
+['a', 'b', 'ε']
+
+TEST 45 END
+
+TEST 46 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_9.txt'); axiom_array , row_tables , column_tables = grammar; print_pattern(axiom_array)" 
+A B A B
+B A B A
+A B A B
+B A B A
+
+TEST 46 END
+
+TEST 47 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_9.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(row_tables)" 
+
+TEST 47 END
+
+TEST 48 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_9.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(column_tables)" 
+C -> a
+
+B -> a
+
+A -> B
+B -> B
+
+B ->
+C ->
+
+A -> a
+
+TEST 48 END
+
+TEST 49 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_9.txt'); non_terminals, terminals = symbols(grammar); print(non_terminals)" 
+['A', 'B', 'C']
+
+TEST 49 END
+
+TEST 50 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_9.txt'); non_terminals, terminals = symbols(grammar); print(terminals)" 
+['a', 'ε']
+
+TEST 50 END
+
+TEST 51 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_10.txt'); axiom_array , row_tables , column_tables = grammar; print_pattern(axiom_array)" 
+Program could not run or crashed
+
+TEST 51 END
+
+TEST 52 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_10.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(row_tables)" 
+Program could not run or crashed
+
+TEST 52 END
+
+TEST 53 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_10.txt'); axiom_array , row_tables , column_tables = grammar; print_tables(column_tables)" 
+Program could not run or crashed
+
+TEST 53 END
+
+TEST 54 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_10.txt'); non_terminals, terminals = symbols(grammar); print(non_terminals)" 
+Program could not run or crashed
+
+TEST 54 END
+
+TEST 55 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_10.txt'); non_terminals, terminals = symbols(grammar); print(terminals)" 
+Program could not run or crashed
+
+TEST 55 END
+
+TEST 56 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_1.txt'); generate(grammar , 'aaaaaaa
+bbbabbb
+bbbabbb
+bbbabbb')"
+Picture can be generated in only one way.
+Here it is:
+a S a
+B Y B
+
+a a S a a
+B B Z B B
+
+a a S a a
+B B Y B B
+b b X b b
+
+a a a S a a a
+B B B Z B B B
+b b b X b b b
+
+a a a S a a a
+B B B Y B B B
+b b b X b b b
+b b b X b b b
+
+a a a a a a a
+B B B A B B B
+b b b a b b b
+b b b a b b b
+
+a a a a a a a
+b b b a b b b
+b b b a b b b
+b b b a b b b
+
+TEST 56 END
+
+TEST 57 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_1.txt'); generate(grammar , 'aaaaaaa
+bbbabbb
+bbbabbb')"
+Picture cannot be generated.
+
+TEST 57 END
+
+TEST 58 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_2.txt'); generate(grammar, '************
+abcdefghijkl
+abcdefghijkl
+bcdefghijkla
+bcdefghijkla
+cdefghijklab
+cdefghijklab
+defghijklabc
+defghijklabc
+efghijklabcd
+efghijklabcd
+fghijklabcde
+fghijklabcde
+ghijklabcdef
+ghijklabcdef
+hijklabcdefg
+hijklabcdefg
+ijklabcdefgh
+ijklabcdefgh
+jklabcdefghi
+jklabcdefghi
+klabcdefghij
+klabcdefghij
+labcdefghijk
+labcdefghijk
+abcdefghijkl
+abcdefghijkl
+************')"
+Picture cannot be generated.
+
+TEST 58 END
+
+TEST 59 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_2.txt'); generate(grammar, '************
+abcdefghijkl
+abcdefghijkl
+bcdefghijkla
+bcdefghijkla
+cdefghijklab
+cdefghijklab
+defghijklabc
+defghijklabc
+efghijklabcd
+efghijklabcd
+fghijklabcde
+fghijklabcde
+ghijklabcdef
+ghijklabcdef
+hijklabcdefg
+hijklabcdefg
+ijklabcdefgh
+ijklabcdefgh
+jklabcdefghi
+jklabcdefghi
+klabcdefghij
+klabcdefghij
+labcdefghijk
+labcdefghijk
+abcdefghijkl
+************')"
+Picture cannot be generated.
+
+TEST 59 END
+
+TEST 60 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_3.txt'); generate(grammar, 'aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa')"
+Picture cannot be generated.
+
+TEST 60 END
+
+TEST 61 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_3.txt'); generate(grammar, 'aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa
+aaaaaaaa')"
+Picture cannot be generated.
+
+TEST 61 END
+
+TEST 62 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_4.txt'); generate(grammar, 'aaaabbbbcccc
+aaaabbbbcccc
+aaaabbbbcccc
+aaaabbbbcccc
+bbbbccccaaaa
+bbbbccccaaaa
+bbbbccccaaaa
+bbbbccccaaaa
+ccccaaaabbbb
+ccccaaaabbbb
+ccccaaaabbbb
+ccccaaaabbbb')"
+Picture cannot be generated in only one way.
+Here is the final deterministic part:
+A2 B2 C2
+A2 B2 C2
+B2 C2 A2
+B2 C2 A2
+C2 A2 B2
+C2 A2 B2
+
+A2 A2 B2 B2 C2 C2
+A2 A2 B2 B2 C2 C2
+B2 B2 C2 C2 A2 A2
+B2 B2 C2 C2 A2 A2
+C2 C2 A2 A2 B2 B2
+C2 C2 A2 A2 B2 B2
+
+A3 A3 B3 B3 C3 C3
+A3 A3 B3 B3 C3 C3
+A3 A3 B3 B3 C3 C3
+A3 A3 B3 B3 C3 C3
+B3 B3 C3 C3 A3 A3
+B3 B3 C3 C3 A3 A3
+B3 B3 C3 C3 A3 A3
+B3 B3 C3 C3 A3 A3
+C3 C3 A3 A3 B3 B3
+C3 C3 A3 A3 B3 B3
+C3 C3 A3 A3 B3 B3
+C3 C3 A3 A3 B3 B3
+
+A A A A B B B B C C C C
+A A A A B B B B C C C C
+A A A A B B B B C C C C
+A A A A B B B B C C C C
+B B B B C C C C A A A A
+B B B B C C C C A A A A
+B B B B C C C C A A A A
+B B B B C C C C A A A A
+C C C C A A A A B B B B
+C C C C A A A A B B B B
+C C C C A A A A B B B B
+C C C C A A A A B B B B
+
+a a a a b b b b c c c c
+a a a a b b b b c c c c
+a a a a b b b b c c c c
+a a a a b b b b c c c c
+b b b b c c c c a a a a
+b b b b c c c c a a a a
+b b b b c c c c a a a a
+b b b b c c c c a a a a
+c c c c a a a a b b b b
+c c c c a a a a b b b b
+c c c c a a a a b b b b
+c c c c a a a a b b b b
+
+TEST 62 END
+
+TEST 63 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_4.txt'); generate(grammar, 'ccccbbbbaaaa
+ccccbbbbaaaa
+ccccbbbbaaaa
+ccccbbbbaaaa
+aaaaccccbbbb
+aaaaccccbbbb
+aaaaccccbbbb
+aaaaccccbbbb
+bbbbaaaacccc
+bbbbaaaacccc
+bbbbaaaacccc
+bbbbaaaacccc')"
+Picture cannot be generated.
+
+TEST 63 END
+
+TEST 64 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_5.txt'); generate(grammar, 'ooooo+ooooo
+oooo+o+oooo
+ooo+ooo+ooo
+oo+ooooo+oo
+o+ooooooo+o
++++++++++++')"
+Picture cannot be generated.
+
+TEST 64 END
+
+TEST 65 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_5.txt'); generate(grammar, 'ooooo+ooooo
+oooo+o+oooo
+ooo+ooo+ooo
+oo+ooooo+oo
+o+++++++++o')"
+Picture cannot be generated.
+
+TEST 65 END
+
+TEST 66 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_6.txt'); generate(grammar, '++++
++**+
++**+
++**+
++**+
++**+
++**+
+++++')"
+Picture cannot be generated.
+
+TEST 66 END
+
+TEST 67 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_6.txt'); generate(grammar, '++++
++**+
++**+
++**+
++**+
++**+
+++++
+++++')"
+Picture cannot be generated.
+
+TEST 67 END
+
+TEST 68 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_7.txt'); generate(grammar , 'ababab
+ababab
+ababab')"
+Picture can be generated ( as ε occurs in the grammar, we will not say more).
+
+TEST 68 END
+
+TEST 69 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_7.txt'); generate(grammar , 'abababab
+abababab
+abababab')"
+Picture cannot be generated.
+
+TEST 69 END
+
+TEST 70 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_8.txt'); generate(grammar, '')"
+Picture can be generated ( as ε occurs in the grammar, we will not say more).
+
+TEST 70 END
+
+TEST 71 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_8.txt'); generate(grammar, 'b
+a
+b')"
+Max running time exceeded, program killed
+
+TEST 71 END
+
+TEST 72 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_9.txt'); generate(grammar, 'aa
+aa
+aa
+aa')"
+Picture can be generated ( as ε occurs in the grammar, we will not say more).
+
+TEST 72 END
+
+TEST 73 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_9.txt'); generate(grammar, 'aa
+aa
+aa')"
+Picture can be generated ( as ε occurs in the grammar, we will not say more).
+
+TEST 73 END
+
+TEST 74 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_10.txt'); generate(grammar, 'bab
+bab')"
+Program could not run or crashed
+
+TEST 74 END
+
+TEST 75 BEGIN
+$ python3 -c "from picture_grammar import *; grammar = get_grammar('grammar_10.txt'); generate(grammar, 'aba
+aba')"
+Program could not run or crashed
+
+TEST 75 END
+

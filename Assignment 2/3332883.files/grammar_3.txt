@@ -1,0 +1,24 @@
+
+# Axiom array
+a AAA
+AAA BBB
+
+# Column tables
+D -> a
+AAA -> a
+
+AAA -> a a AAA
+DDD -> EEE DDD f
+CCC -> AAA AAA BBB
+
+# Row tables
+AAA -> a
+BBB -> D
+EEE -> g
+
+AAA -> a a a AAA
+BBB -> AAA AAA AAA CCC
+EEE -> h i j k
+DDD -> k j i h
+
+

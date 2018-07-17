@@ -1,0 +1,21 @@
+# Axiom array
+
+a S a
+B Y B
+
+# Column tables
+
+S -> a S a
+Y -> B Z B
+X -> b X b
+
+Y -> A
+
+# Row tables
+
+B -> ε
+A -> ε
+
+B -> B b
+Z -> Y X
+

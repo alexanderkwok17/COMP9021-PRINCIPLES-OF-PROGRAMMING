@@ -1,0 +1,42 @@
+# Axiom array
+
+Start
+
+
+
+# Row tables
+
+Left_2 -> O Left_1
+Right_2 -> O Right_1
+Useless   ->  Useless q
+A -> + O
+O -> o O
+
+Useless   ->  x
+Left_1 -> Left_3
+O -> +
+Right_1 -> Right_3
+
+
+
+# Column tables
+
+Start -> Left_2 A Right_2
+Useless   ->  y Useless p
+
+O -> O o
+Left_1 -> Left_2 A
+
+O -> o O
+Right_1 -> A Right_2
+
+Left_3 -> +
+O -> o
+Useless   ->  Useless
+
+Right_3 -> +
+O -> o
+
+
+
+

@@ -1,0 +1,35 @@
+
+# Row tables
+
+A -> a a B
+B -> b b C
+C -> c c D
+D -> d d E
+E -> e e F
+F -> f f G
+G -> g g H
+H -> h h I
+I -> i i J
+J -> j j K
+K -> k k L
+L -> l l A
+
+A -> a a *
+B -> b b *
+C -> c c *
+D -> d d *
+E -> e e *
+F -> f f *
+G -> g g *
+H -> h h *
+I -> i i *
+J -> j j *
+K -> k k *
+L -> l l *
+
+# Axiom array
+* * * * * * * * * * * *
+A B C D E F G H I J K L
+
+# Column tables
+

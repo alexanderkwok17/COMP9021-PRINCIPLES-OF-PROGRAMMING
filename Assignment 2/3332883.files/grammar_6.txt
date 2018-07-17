@@ -1,0 +1,58 @@
+
+
+# Column tables
+
+   MNP   -> MNP a
+
+
+   C     ->  +
+  B1     ->  +
+  B2     -> D2
+
+
+  Z     -> +
+  A     -> +
+
+  A1     -> B1
+  A2     -> B2
+   X     ->  B
+
+
+  A1     -> A   A1
+  A2     -> A   A2
+   A     -> A    X
+
+
+  A1     ->  +   A1
+  A2     -> A2   A2
+   X     ->  X    X
+
+
+# Axiom array
+
+
+  A1
+   A
+   A
+   A
+   A
+   A
+   A
+  A2
+
+
+# Row tables
+
+
+  D2   -> +
+  A2   -> +
+  A    -> Z
+
+
+  MNP   -> b MNP
+  PQR   -> MNP c
+
+
+  A   -> A
+  B   -> C
+  X   -> *
